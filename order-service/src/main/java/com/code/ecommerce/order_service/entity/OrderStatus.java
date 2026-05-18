@@ -1,5 +1,5 @@
 package com.code.ecommerce.order_service.entity;
 
 public enum OrderStatus {
-    CONFIRMED, CANCELLED, PENDING, DELIVERED
+    CONFIRMED,CANCELLED,PENDING,DELIVERED;
 }

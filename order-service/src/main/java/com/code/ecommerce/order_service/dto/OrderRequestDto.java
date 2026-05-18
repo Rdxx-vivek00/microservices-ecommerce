@@ -11,4 +11,3 @@ public class OrderRequestDto {
     private List<OrderRequestItemDto> items;
     private BigDecimal totalPrice;
 }
-

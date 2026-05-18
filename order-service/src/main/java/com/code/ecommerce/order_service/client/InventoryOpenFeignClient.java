@@ -1,4 +1,4 @@
-package com.code.ecommerce.order_service.clients;
+package com.code.ecommerce.order_service.client;
 
 import com.code.ecommerce.order_service.dto.OrderRequestDto;
 import org.springframework.cloud.openfeign.FeignClient;

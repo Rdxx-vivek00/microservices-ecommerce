@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "products")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(name="products")
 public class Product {
 
     @Id
@@ -21,8 +21,5 @@ public class Product {
     private Double price;
 
     private Integer stock;
-
-
-
 
 }

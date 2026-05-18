@@ -1,4 +1,4 @@
-package com.code.ecommerce.inventory_service.configs;
+package com.code.ecommerce.inventory_service.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,7 @@ import org.springframework.web.client.RestClient;
 public class AppConfig {
 
     @Bean
-    public ModelMapper modelMapper()
+   public ModelMapper modelMapper()
     {
         return new ModelMapper();
     }
