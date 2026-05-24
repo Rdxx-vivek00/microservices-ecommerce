@@ -7,6 +7,7 @@ import com.code.ecommerce.order_service.entity.OrderItem;
 import com.code.ecommerce.order_service.entity.OrderStatus;
 import com.code.ecommerce.order_service.entity.Orders;
 import com.code.ecommerce.order_service.repository.OrderRepository;
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -35,6 +36,8 @@ private final InventoryOpenFeignClient inventoryOpenFeignClient;
         return modelMapper.map(order, OrderRequestDto.class);
     }
 
+
+    @Retry(name = "inventoryRetry",fallbackMethod = "createOrderFallback")
     public OrderRequestDto createOrder(OrderRequestDto orderRequestDto) {
 
           Double totalPrice= inventoryOpenFeignClient.reduceStocks(orderRequestDto);
